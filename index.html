@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mahmoud Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav id="navbar">
+    <a href="#hero" class="logo">Mahmoud</a>
+
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#hero" class="nav-link">Home</a></li>
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#skills" class="nav-link">Skills</a></li>
+      <li><a href="#projects" class="nav-link">Projects</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <img src="profile.png" alt="Mahmoud Ahmed - Profile Picture">
+      <h1>Hi, I'm <span>Mahmoud Ahmed</span></h1>
+      <p class="hero-subtitle">Front-End Developer & Tech Enthusiast</p>
+      <a href="#contact" class="btn">Contact Me</a>
+    </div>
+  </section>
+
+  <!-- About Me Section -->
+  <section class="about" id="about">
+    <div class="about-container">
+      <div class="about-text">
+        <h2>About Me</h2>
+        <p>
+          Hi, I'm Mahmoud Ahmed. I am a student passionate about technology and web development.
+          I am currently learning HTML and CSS and aiming to become a professional Front-End Developer.
+        </p>
+        <p>
+          I also have experience in Technology, and I am working on improving my skills
+          in programming and cybersecurity.
+        </p>
+        <a href="#contact" class="btn">Contact Me</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <!-- Skills Section -->
+  <section id="skills">
+    <h2>My Skills</h2>
+    <div class="skills">
+      <div class="skill">HTML5</div>
+      <div class="skill">CSS3</div>
+      <div class="skill">Java Script</div>
+
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2>My Projects</h2>
+    <div class="projects">
+
+      <div class="card">
+        <a href="https://mahmoud-ahmed1-pro.github.io/Luna-Salon/">
+          <h3>Luna Salon</h3>
+        </a>
+        <p>About
+Luna Beauty Studio is a premium, modern, and fully responsive single-page web application designed for a luxury beauty salon located in the heart of Cairo.</p>
+      </div>
+      <div class="card">
+        <a href="https://mahmoud-ahmed1-pro.github.io/My-Link/">
+          <h3>Links Me</h3>
+        </a>
+        <p>A clean and interactive social profile links card inspired by Frontend Mentor, designed to accumulate social
+          media handles.</p>
+      </div>
+
+      <div class="card">
+        <a href="https://mahmoud-ahmed1-pro.github.io/AI-Gen/">
+          <h3> Simple AI Generator</h3>
+        </a>
+        <p>"A sleek, responsive AI Images Generator that instantly fetches and displays three high-quality images based
+          on user prompt".</p>
+      </div>
+      <div class="card">
+        <a href="https://mahmoud-ahmed1-pro.github.io/To-DO-/">
+          <h3>To Do List</h3>
+        </a>
+        <p>"A responsive To-Do List web application developed using web technologies.".</p>
+      </div>
+      <div class="card">
+        <a href="https://mahmoud-ahmed1-pro.github.io/menu/">
+          <h3>Filterable-menu</h3>
+        </a>
+        <p>"This website features a dynamic, filterable food menu built with HTML, CSS, and JavaScript."</p>
+      </div>
+
+
+
+
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <div class="contact-info">
+      <p>📧 <a href="mailto:mahmoud.a.a.m.a.e@gmail.com">mahmoud.a.a.m.a.e@gmail.com</a></p>
+      <p>💬 <a href="https://wa.me/201554022009">01554022009</a></p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 Mahmoud Ahmed</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+
+    hamburger.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      hamburger.classList.toggle('active');
+      hamburger.setAttribute('aria-expanded', isOpen);
+    });
+
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        hamburger.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', false);
+      });
+    });
+
+    window.addEventListener('scroll', () => {
+      const navbar = document.getElementById('navbar');
+      navbar.classList.toggle('scrolled', window.scrollY > 50);
+    });
+  </script>
+
+</body>
+
+</html>
