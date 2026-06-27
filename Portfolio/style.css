@@ -160,6 +160,53 @@ nav.scrolled {
   gap: 16px;
   max-width: 600px;
 }
+.hero-content a {
+  
+    background: transparent;
+    border: 1.2px solid var(--gold);
+    color: var(--gold);
+    padding: 8px 22px;
+    font-family: 'Jost', sans-serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all .2s;
+    background: #25D366;
+    color: white;
+    padding: 15px 38px;
+    border: none;
+    font-family: 'Jost', sans-serif;
+    font-size: 12px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 500;
+    transition: opacity .2s;
+    border-radius: 10px;
+     
+}
+.wa-icon {
+    fill: white;
+}
+
+.hero-content a :hover{
+   opacity: .88;
+
+}
+
+
+
+
+.btn-nav:hover {
+    background: var(--gold);
+    color: var(--bg);
+}
+
+
 
 .hero img {
   width: clamp(150px, 30vw, 220px);
@@ -387,32 +434,25 @@ footer {
    =================================================== */
 
 /* ---- Mobile: up to 767px ---- */
+/* ---- Mobile: up to 767px ---- */
 @media (max-width: 767px) {
 
-  /* Reduce vertical gaps on mobile */
+  /* تقليل المسافات الأفقية من 20px إلى 12px وتجميع الأقسام لمنع التكرار */
+  .about, 
+  #skills, 
+  #projects, 
+  #contact {
+    padding: 30px 12px; 
+  }
+
+  /* تقليل المسافات الأفقية في الـ Hero أيضاً */
   .hero {
     min-height: 100vh;
-    padding: calc(var(--nav-height) + 20px) 20px 30px;
+    padding: calc(var(--nav-height) + 20px) 12px 30px;
   }
 
   .hero-content {
     gap: 10px;
-  }
-
-  .about {
-    padding: 30px 20px;
-  }
-
-  #skills {
-    padding: 30px 20px;
-  }
-
-  #projects {
-    padding: 30px 20px;
-  }
-
-  #contact {
-    padding: 30px 20px;
   }
 
   .contact-info {
@@ -493,12 +533,17 @@ footer {
 /* ---- Tablet: 768px – 1023px ---- */
 @media (min-width: 768px) and (max-width: 1023px) {
 
-  .projects {
-    grid-template-columns: repeat(2, 1fr);
+  /* توحيد وتقليل المسافات الأفقية لكل الأقسام في التابلت لـ 24px بدلاً من المساحات العشوائية */
+  .about, 
+  #skills, 
+  #projects, 
+  #contact {
+    padding: 50px 24px; 
   }
 
-  .about {
-    padding: 60px clamp(30px, 6vw, 80px);
+  .projects {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px; /* أضفت gap محدد هنا لمنع تباعد الكروت بشكل مبالغ فيه */
   }
 
   .about-text {
@@ -529,4 +574,8 @@ footer {
     padding-left: clamp(60px, 10vw, 180px);
     padding-right: clamp(60px, 10vw, 180px);
   }
+}
+
+a {
+  text-decoration: none;
 }
